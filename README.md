@@ -77,7 +77,17 @@ Evaluasi dilakukan menggunakan:
 
 ---
 
-## ▶️ Cara Menjalankan
+### 1. Jalankan di Google Colab (direkomendasikan)
+
+Klik tombol berikut untuk membuka notebook di Colab:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+
+Lalu import file ini ke google collab:  
+[Notebook](https://github.com/nekowawolf/tugas-besar-datamining-kelompok2/tree/main/notebook)
+
+### 2. Jalankan secara lokal
+
+▶️ Cara Menjalankan
 
 ### 0. Membuat Virtual Environment (OPSIONAL - Jika DIbutuhkan)
 ```bash
