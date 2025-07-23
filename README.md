@@ -15,73 +15,83 @@ Semester Genap 2025
 
 ## 🧩 Deskripsi Kasus
 
-Penelitian ini berfokus pada prediksi keberadaan *defect* (cacat) dalam perangkat lunak menggunakan dataset NASA CM1 dari NASA Metrics Data Program (MDP). Dataset ini mengandung metrik-metrik perangkat lunak serta informasi apakah suatu modul memiliki cacat atau tidak. Masalah utama adalah ketidakseimbangan kelas (class imbalance) antara modul yang *defect* dan tidak.
+Penelitian ini berfokus pada prediksi keberadaan *defect* (cacat) dalam perangkat lunak menggunakan dataset NASA CM1 dari NASA Metrics Data Program (MDP). Dataset ini berisi metrik perangkat lunak dan status defect dari modul-modulnya. Masalah utama yang dihadapi adalah ketidakseimbangan kelas (class imbalance), di mana modul non-defect jauh lebih banyak dibanding modul defect.
 
 ---
 
 ## 💾 Sumber Dataset
 
-Dataset dapat ditemukan di repository kami:  
-📁 [`NASA-promise-dataset`](https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository)  
-📄 File: `cm1.csv`
+Dataset final hasil preprocessing disimpan di repository ini:  
+📄 [`cm1_final-23-07-2025.csv`](https://github.com/nekowawolf/NASA-promise-dataset/blob/main/cm1_final-23-07-2025.csv)
 
-Dataset ini terdiri dari 498 baris dan 22 kolom, termasuk:
-- 21 fitur numerik (seperti LOC, cyclomatic complexity, dll)
-- 1 target label (`defects`) bernilai 0 (tidak cacat) atau 1 (cacat)
+Dataset Raw di simpan di sini:  
+📄 [`cm1_final-23-07-2025.csv`](https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository/)
+
+
+Dataset terdiri dari:
+- 498 baris data
+- 21 fitur numerik
+- 1 kolom target: `defects` (0 = tidak cacat, 1 = cacat)
+- Sudah melalui proses normalisasi dan cleaning
 
 ---
 
 ## ⚙️ Langkah Preprocessing
 
-1. **Handling Missing Values**: Drop baris kosong.
-2. **Label Encoding**: Pastikan label `defects` bertipe numerik.
-3. **Normalisasi Fitur**: Menggunakan `MinMaxScaler` untuk rentang 0–1.
-4. **Handling Imbalance**: Oversampling dengan teknik **SMOTE**.
-5. **Split Data**: Data dibagi 80% train dan 20% test.
+1. **Menghapus Missing Values**  
+2. **Label Encoding**: Konversi label defect ke numerik  
+3. **Normalisasi** fitur numerik menggunakan `MinMaxScaler`  
+4. **Menangani Ketidakseimbangan Kelas** dengan **SMOTE**  
+5. **Split Data**: 80% train, 20% test
 
 ---
 
 ## 🤖 Algoritma yang Digunakan
 
-Tiga algoritma supervised learning digunakan dan dibandingkan performanya:
+Tiga algoritma klasifikasi digunakan dan dibandingkan:
 
 - **Logistic Regression**
 - **Random Forest**
 - **K-Nearest Neighbors (KNN)**
+
+Semua model dilatih setelah proses oversampling dengan SMOTE.
 
 ---
 
 ## 📈 Evaluasi & Hasil
 
 Evaluasi dilakukan menggunakan:
-- **Akurasi**
+- **Accuracy**
 - **Precision**
 - **Recall**
 - **F1-Score**
+- **Confusion Matrix**
 
-| Model              | Akurasi | F1-Score |
-|--------------------|---------|----------|
-| Logistic Regression| 76.11%  | 0.75     |
-| KNN                | 78.89%  | 0.81     |
-| Random Forest      | **91.11%** | **0.91** |
+| Model               | Akurasi | Recall (Defect) | F1-Score (Defect) |
+|---------------------|---------|------------------|-------------------|
+| **Logistic Regression** | 82%     | **75%**           | **0.50**          |
+| Random Forest        | 83%     | 0%               | 0.00              |
+| KNN                  | 68%     | 33%              | 0.20              |
 
-📌 *Random Forest menunjukkan performa terbaik, diikuti oleh KNN dan Logistic Regression.*
+📌 **Logistic Regression menghasilkan performa terbaik**, dengan kemampuan deteksi defect mencapai 75% (recall), menjadikannya model yang paling cocok digunakan dalam konteks klasifikasi cacat perangkat lunak.
 
 ---
 
 ## ▶️ Cara Menjalankan
 
-> 💡 **Note**: Notebook ini menggunakan Python dan library `sklearn`, `pandas`, `numpy`, `seaborn`, `matplotlib`, dan `imblearn`.
+> 💡 **Note**: Proyek ini menggunakan Python dan library: `pandas`, `numpy`, `scikit-learn`, `imbalanced-learn`, `matplotlib`, dan `seaborn`.
 
 ### 1. Jalankan di Google Colab (direkomendasikan)
 
 Klik tombol berikut untuk membuka notebook di Colab:  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
+Lalu buka file [`notebook`](https://github.com/nekowawolf/tugas-besar-datamining-kelompok2/tree/main/notebook) dan import ke google collab
+
 ### 2. Jalankan secara lokal
 
 ```bash
 git clone https://github.com/nekowawolf/tugas-besar-datamining-kelompok2.git
 cd tugas-besar-datamining-kelompok2
-pip install -r requirements.txt  # Buat file requirements.txt jika diperlukan
-python main.py  # atau jalankan file notebook dengan Jupyter
+pip install -r requirements.txt
+jupyter notebook notebook/
