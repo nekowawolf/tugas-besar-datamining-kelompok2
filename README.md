@@ -79,19 +79,19 @@ Evaluasi dilakukan menggunakan:
 
 ## ▶️ Cara Menjalankan
 
-> 💡 **Note**: Proyek ini menggunakan Python dan library: `pandas`, `numpy`, `scikit-learn`, `imbalanced-learn`, `matplotlib`, dan `seaborn`.
+### 0. Membuat Virtual Environment (OPSIONAL - Jika DIbutuhkan)
+```bash
+python3 -m venv env
+source env/bin/activate
+```
 
-### 1. Jalankan di Google Colab (direkomendasikan)
-
-Klik tombol berikut untuk membuka notebook di Colab:  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
-
-Lalu buka file [`notebook`](https://github.com/nekowawolf/tugas-besar-datamining-kelompok2/tree/main/notebook) dan import ke google collab
+### 1. Install dependencies yang dibutuhkan
+```bash
+pip install -r src/requirements.txt
+```
 
 ### 2. Jalankan secara lokal
 
 ```bash
-git clone https://github.com/nekowawolf/tugas-besar-datamining-kelompok2.git
-cd tugas-besar-datamining-kelompok2
-pip install -r requirements.txt
-jupyter notebook notebook/
+python src/main.py
+```
