@@ -5,7 +5,7 @@ Kelompok 2 - Diploma IV Teknik Informatika
 Universitas Logistik dan Bisnis Internasional, Bandung  
 Semester Genap 2025
 
-## 👥 Anggota Kelompok & NIM
+## 👥 Anggota Kelompok
 
 - Aliffathur Muhammad Revan — 714220066  
 - Hammi Ahlan Abdulmujib — 714220062  
@@ -22,10 +22,10 @@ Penelitian ini berfokus pada prediksi keberadaan *defect* (cacat) dalam perangka
 ## 💾 Sumber Dataset
 
 Dataset final hasil preprocessing disimpan di repository ini:  
-📄 [`cm1_final-23-07-2025.csv`](https://github.com/nekowawolf/NASA-promise-dataset/blob/main/cm1_final-23-07-2025.csv)
+📄 [`cm1_final.csv`](https://github.com/nekowawolf/NASA-promise-dataset/blob/main/cm1_final-23-07-2025.csv)
 
 Dataset Raw di simpan di sini:  
-📄 [`cm1_final-23-07-2025.csv`](https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository/)
+📄 [`cm1.csv`](https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository/)
 
 
 Dataset terdiri dari:
@@ -76,6 +76,8 @@ Evaluasi dilakukan menggunakan:
 📌 **Logistic Regression menghasilkan performa terbaik**, dengan kemampuan deteksi defect mencapai 75% (recall), menjadikannya model yang paling cocok digunakan dalam konteks klasifikasi cacat perangkat lunak.
 
 ---
+
+# 💻 Cara Menjalankan
 
 ### 1. Jalankan di Google Colab (direkomendasikan)
 
