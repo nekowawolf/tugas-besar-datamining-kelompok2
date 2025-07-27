@@ -77,7 +77,7 @@ Evaluasi dilakukan menggunakan:
 
 ---
 
-# 💻 Cara Menjalankan
+## 💻 Cara Menjalankan
 
 ### 1. Jalankan di Google Colab (direkomendasikan)
 
