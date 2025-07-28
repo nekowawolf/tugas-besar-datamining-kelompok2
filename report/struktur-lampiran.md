@@ -2,7 +2,7 @@
 
 Dokumen ini merangkum struktur isi laporan dan lampiran dari Tugas Besar Data Mining berjudul:
 
-**"Prediksi Software Defect Berdasarkan Dataset NASA CM1 Menggunakan Decision Tree dan Teknik SMOTE"**  
+**"Prediksi Software Defect NASA CM1 dengan SMOTE & Machine Learning"**  
 Kelompok 2 – ULBI Bandung, 2025
 
 ---
@@ -30,8 +30,7 @@ Kelompok 2 – ULBI Bandung, 2025
 2.1 Kajian Teori
 - Data Mining  
 - Machine Learning  
-- Klasifikasi  
-- Decision Tree  
+- Klasifikasi    
 - Ketidakseimbangan Data  
 - SMOTE  
 - Dataset NASA MDP  
